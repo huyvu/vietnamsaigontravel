@@ -1,0 +1,251 @@
+<?php /* Start head */ ?>
+<?php $__env->startSection('title'); ?> 
+    <?php echo e($title); ?>
+
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('description'); ?>
+    <?php echo e($description); ?>
+
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('keywords'); ?>
+    <?php echo e($keywords); ?>
+
+<?php $__env->stopSection(); ?>
+<?php /* End head */ ?>
+
+<?php $__env->startSection('page-content'); ?>
+    <div id="carousel-example-generic" class="carousel slide slidehome" data-ride="carousel">
+	  <!-- Indicators -->
+		  <ol class="carousel-indicators">
+		    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+		    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+		    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+		    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+		    <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+		  </ol>
+
+	  <!-- Wrapper for slides -->
+		  <div class="carousel-inner" role="listbox">
+		    <div class="item active">
+				<?php echo HTML::image('slideshow/tours-in-vietnam-11-days.jpg', 'Tours Vietnam in 11 Days'); ?>
+
+		    </div>
+		    <div class="item">
+			    <?php echo HTML::image('slideshow/halongbay-4days.jpg', 'HaLong Bay in 4 Days'); ?>
+
+		    </div>
+		    <div class="item">
+				<?php echo HTML::image('slideshow/mekong-2days.jpg', 'Explore Mekong Delta in 2 Days'); ?>
+
+		    </div>
+		    <div class="item">
+			    <?php echo HTML::image('slideshow/sapa-4days.jpg', 'Discovery Northwest Vietnam in 4 Days'); ?>
+
+		    </div>
+		    <div class="item">
+			    <?php echo HTML::image('slideshow/vietnam-holiday-package-9days.jpg', 'Tours Vietnam holiday Packages in 9 Days'); ?>
+
+		    </div>
+		  </div>
+
+		  <!-- Controls -->
+		  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+			    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+			    <span class="sr-only">Previous</span>
+		  </a>
+		  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+			    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+			    <span class="sr-only">Next</span>
+		  </a>
+		  <div class="tips">
+			   	<div class="container wphomes">
+			      	<div class="searchbox-black toogle-search">
+			         	<p class="search-head">Find Your Trip</p>
+			         	<form method="get" action="<?php echo e(URL::to('search')); ?>" id="frmSearch" class="form-horizontal" name="frmSearch">
+			            <ul>
+			               	<?php /* <li>
+			                  	<label for="slCountry">Country</label>
+			                  	<select onchange="selectChange()" id="slCountry" name="slCountry" class="form-control">
+			                     	<option value="-1">-- [Select] --</option>
+			                     	<option value="1">Vietnam tours</option>
+			                     	<option value="2">Laos tours</option>
+			                     	<option value="3">Cambodia tours</option>
+			                     	<option value="4">Myanmar tours</option>
+			                  	</select>
+			               	</li> */ ?>
+			               	<li>
+			                  	<label>Destinations</label>
+			                  	<select id="slDestination" name="slDestination" class="form-control">
+			                     	<option value="1">-- [Vietnam Destinations] --</option>
+			                     	<option value="Cai Be">Cai Be</option>
+			                     	<option value="Can Tho">Can Tho</option>
+			                     	<option value="Chau Doc">Chau Doc</option>
+			                     	<option value="Cu Chi">Cu Chi Tunnels</option>
+			                     	<option value="DaLat">Da Lat</option>
+			                     	<option value="Da Nang">Da Nang</option>
+			                     	<option value="Floating Market">Floating Market</option>
+			                     	<option value="Halong Bay">Halong Bay</option>
+			                     	<option value="hanoi">Hanoi Capital</option>
+			                     	<option value="Ho Chi Minh City">Ho Chi Minh City</option>
+			                     	<option value="hoi an">Hoian Ancient Town</option>
+			                     	<option value="Hue">Hue Citadel</option>
+			                     	<option value="Lao Cai">Lao Cai</option>
+			                     	<option value="Mekong Delta">Mekong Delta</option>
+			                     	<option value="Mui Ne">Mui Ne - Phan Thiet</option>
+			                     	<option value="My Tho">My Tho</option>
+			                     	<option value="Nha Trang">Nha Trang</option>
+			                     	<option value="Phu Quoc">Phu Quoc Island</option>
+			                     	<option value="sapa">Sapa</option>
+			                     	<option value="Vinh Long">Vinh Long</option>
+			                     	<option value="Vung Tau">Vung Tau</option>
+			                  	</select>
+							</li>
+							<li>
+								<label for="slDuration">Trip Duration</label>
+								<select id="slDuration" name="slDuration" class="form-control">
+									<option value="-1">-- [All] --</option>
+									<option value="1 - 2">1 - 2 days</option>
+									<option value="2 - 5">2 - 5 days</option>
+									<option value="6 - 12">6 - 12 days</option>
+									<option value="13 -&gt;">13 -&gt; days</option>
+								</select>
+							</li>
+							<li>
+								<label for="slPrice">Price</label>
+								<select id="slPrice" name="slPrice" class="form-control">
+									<option>-- [All] --</option>
+									<option value="100 - 300">100 - 300 USD</option>
+									<option value="200 - 500">200 - 500 USD</option>
+									<option value="500 - 1000">500 - 1000 USD</option>
+									<option value="1000 -&gt;">&gt; 1000 USD</option>
+									</select>
+							</li>
+			               	<li class="lsearchlast">
+			               		<input type="submit" onclick="return validate();" class="btn btn-default" value="Search" id="Submit" name="Submit">
+			               	</li>
+			            </ul>
+			        </form>
+			    </div>
+			</div>
+		</div>
+	</div>
+	<div class="tips2">
+		<div class="container">
+	   		<div class="row">
+	   			<div class="col-sm-3">
+	   				<a class="tips-group booknow" title="Book tour now" href="#tailor-made-tour">
+	   					Design Your Own Trip<span>Create your plan trip and send request.</span>
+	   				</a>
+	   			</div>
+	   			<div class="col-sm-3">
+	   				<a class="tips-group chat" title="Chat online with our experts" href="tel:+84902626729">
+	   				 	+84 902 626 729<span>Discuss with our experts - Support 24/7.</span>
+	   				</a>
+	   			</div>
+	   			<div class="col-sm-6 social socialhome">
+	   				<?php echo $__env->make('module.social', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+	   			</div>
+	   		</div>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+	<div>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6">
+					<section class="traveldes">
+						<h2>Travel Destinations</h2>
+						<a href="<?php echo e(URL::to('travel-to-vietnam')); ?>" title="VIETNAM TOURS">
+							<?php echo HTML::image('tours/h-vietnam.jpg', 'Vietnam travel', ['class' => 'img-responsive']); ?>
+
+						</a>
+						<h3 class="f18">
+							<a href="<?php echo e(URL::to('travel-to-vietnam')); ?>" title="Tours in vietnam" class="decoration">Tours in Vietnam</a>
+						</h3>
+						<ul>
+							<li>
+								<a href="<?php echo e(URL::to('tours-around-vietnam')); ?>" title="Vietnam in style - 11 Days">» Vietnam in style - 11 Days</a>
+							</li>
+							<li>
+								<a href="<?php echo e(URL::to('vietnam-discovery-tours')); ?>" title="Discovery Vietnam in style - 9 Days">» Discovery Vietnam in style - 9 Days</a>
+							</li>
+							<li>
+								<a href="<?php echo e(URL::to('north-vietnam-tour-package')); ?>" title="North Vietnam Highlights - 5 Days">» North Vietnam Highlights - 5 Days</a>
+							</li>
+							<li>
+								<a href="<?php echo e(URL::to('danang-hue-hoian-tours')); ?>" title="Central Vietnam Explorer - 5 Days">» Central Vietnam Explorer - 5 Days</a>
+							</li>
+							<li>
+								<a href="<?php echo e(URL::to('vietnam-beach-holiday-packages')); ?>" title="Vietnam Beach Tour - 14 Days">» Vietnam Beach Tour - 14 Days</a>
+							</li>
+							<li>
+								<a href="<?php echo e(URL::to('best-holiday-packages-to-vietnam')); ?>" title="Southern Escape - 9 Days">» Southern Escape - 9 Days</a>
+							</li>
+						</ul>
+					</section>
+					<section class="traveldes">
+						<h2>Other Tours</h2>
+						<a href="<?php echo e(URL::to('vietnam-day-tours')); ?>" title="Day Tours in Vietnam">
+							<?php echo HTML::image('tours/daytours-home.jpg', 'Day Tours in Vietnam', ['class' => 'img-responsive']); ?>
+
+						</a>
+						<h3 class="f18">
+							<a href="<?php echo e(URL::to('vietnam-day-tours')); ?>" title="Vietnam Day Tours" class="decoration">Vietnam Day Tours</a>
+						</h3>
+						<ul class="half-list">
+							<li>
+								<a href="<?php echo e(URL::to('saigon-shopping-tour')); ?>" title="Saigon Shopping and Relaxing">» Saigon Shopping and Relaxing</a>
+							</li>
+							<li>
+								<a href="<?php echo e(URL::to('saigon-cooking-class-tour')); ?>" title="Saigon Cooking Class">» Saigon Cooking Class</a>
+							</li>
+							<li>
+								<a href="<?php echo e(URL::to('cuchi-saigon-vietnam-day-tours')); ?>" title="Full Day Cu Chi - City">» Full Day Cu Chi - City</a>
+							</li>
+							<li>
+								<a href="<?php echo e(URL::to('mekong-vietnam-day-tours')); ?>" title="Full Day Mekong Cai Be - Vinh Long">» Full Day Mekong Cai Be - Vinh Long</a>
+							</li>
+							<li>
+								<a href="<?php echo e(URL::to('saigon-vietnam-day-tours')); ?>" title="Full Day City Tour">» Full Day City Tour</a>
+							</li>
+							<li>
+								<a href="<?php echo e(URL::to('caodai-cuchi-vietnam-day-tours')); ?>" title="Full day Cu Chi - Cao Dai">» Full day Cu Chi - Cao Dai</a>
+							</li>
+
+							<li>
+								<a href="<?php echo e(URL::to('mytho-vietnam-day-tours')); ?>" title="Full Mekong Day My Tho">» Full Mekong Day My Tho</a>
+							</li>
+							<li>
+								<a href="<?php echo e(URL::to('hochiminh-city-vietnam-day-tours')); ?>" title="Half Day City Tour">» Half Day City Tour</a>
+							</li>
+							<li>
+								<a href="<?php echo e(URL::to('cuchi-vietnam-day-tours')); ?>" title="Half Day Cu Chi">» Half Day Cu Chi</a>
+							</li>
+							<li>
+								<a href="<?php echo e(URL::to('hanoi-city-vietnam-day-tours')); ?>" title="Fullday Hanoi City Tour">» Fullday Hanoi City Tour</a>
+							</li>
+							<li>
+								<a href="<?php echo e(URL::to('halong-bay-vietnam-day-tours')); ?>" title="Fullday Halong Bay Tour">» Fullday Halong Bay Tour</a>
+							</li>
+							<li>
+								<a href="<?php echo e(URL::to('tamcoc-vietnam-day-tour')); ?>" title="Full Day Tam Coc Bich Dong">» Full Day Tam Coc Bich Dong</a>
+							</li>
+						</ul>				
+					</section>
+					<div class="row">
+						<div class="col-sm-6">
+							
+						</div>
+						<div class="col-sm-6">
+							
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					
+				</div>
+			</div>
+		</div>
+	</div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout.main', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

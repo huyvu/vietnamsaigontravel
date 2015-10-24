@@ -1,0 +1,238 @@
+@extends('layout.main')
+
+@section('page-content')
+{!! HTML::style('magnific-popup.css') !!}
+<div id="vietnam-tour-detail">
+	<div class="slidehome">
+		@include('module.findyourstrip')
+	</div>
+
+	<div class="container">
+		<h1 class="page-title">NORTH VIETNAM TOURS</h1>
+		<div class="breadcrumbs clearfix">
+			<div class="breadcrumb" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+				<a href="#" class="active" itemprop="url"><span itemprop="title">Home</span></a>
+				<span>› </span>
+				<a title="Visa Fees" href="#" class="active">
+				<span itemprop="title">Vietnam tours</span>
+				</a>
+				<span>› </span>
+				<a title="Visa Fees" href="#" class="active">
+				<span itemprop="title">Northern</span>
+				</a>
+				<span>› </span>
+				<a title="Visa Fees" href="#" class="active">
+				<span itemprop="title">Explore the Wonders of Sapa 4 Days/ 3 Nights</span>
+				</a>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-9 col-sm-8">
+				<div class="tour-thumbnail">
+					<div class="row">
+						<div class="col-sm-5">
+							<img src="http://www.palmvietnamtravel.com/data/upload/1427341738-sapa-vietnam.jpg" alt="Explore the Wonders of Sapa" class="img-responsive">
+						</div>
+						<div class="col-sm-7">
+							<h2>Explore the Wonders of Sapa</h2>
+							<p>It is said that you have never visited Vietnam if you miss tours to Sapa from Hanoi. With its wonderful natural scenery and ethnic minorities, together with Palmvietnam Travel you will experience and explore a real Vietnam hidden charm.</p>
+							<p class="duration"><strong>Duration:</strong> 4 Days/ 3 Nights</p>
+							<span class="price">From: $169</span>
+							<div style="margin-top: 40px">
+								<a href="{{ URL::to('booking/step2/travel-to-vietnam') }}" class="btn btn-summary">ONLINE BOOKING</a>
+								<a href="#" class="btn btn-summary">DESIGN YOUR OWN TOUR</a>
+							</div>
+						</div>
+					</div>
+				</div><!-- tour-thumbnail -->
+				@include('module.contact')
+				<!-- .notice -->
+
+				<div class="tour-detail">
+					<div class="tour-tabs">
+					    <!-- Nav tabs -->
+						<ul class="nav nav-tabs" role="tablist">
+							<li role="presentation" class="active"><a href="#intro" aria-controls="intro" role="tab" data-toggle="tab">ITINERARY & PRICE</a></li>
+							<li role="presentation"><a href="#map" aria-controls="map" role="tab" data-toggle="tab">TOUR MAP</a></li>
+						</ul>
+
+						<!-- Tab panes -->
+						<div class="tab-content">
+
+							<div role="tabpanel" class="tab-pane active tour-content" id="intro">
+								<h3>SUMMARY:</h3>
+								<p><strong>Tours to Sapa from Hanoi</strong> starts at <a title="About Hanoi" href="../blog/vietnam/destinations/hanoi.html" target="_blank">Hanoi</a> train station to Lao Cai Province. Beginning the travel in <a title="Sa Pa - Heaven Town in the Cloud" href="../blog/vietnam/destinations/sapa.html" target="_blank">Sapa</a> by admiring the stunning view of Muong Hoa valley and visit Tavan village of Giay minority and Seomity village of Black Hmong minority before you arrive at the campsite, which locates nearby a river outside the village.</p>
+								<p>The following days, continue trekking from villages to villages to understand life of tribal peoples in remote land when paying visit to a local house of Red Dao and Black H’mong people, the two largest ethnic groups living in Sapa. Thanh Phu and Ban Lech will be the last villages of your trekking Sapa Tour before heading back to Hanoi.</p>
+								<div class="tovisit">
+									<strong>Destinations to visit:</strong>
+									<p>Sapa - Ta Van - Seomity - Den Thang - Ta Trung Ho - Nam Toong - Thanh Phu - Ban Lech </p>
+								</div>
+
+								<h3>PHOTOS:</h3>
+								<div class="row photos">
+									<?php
+										$img_array = ['bpscihpa_1411784241-red-dao-people-1.jpg',
+										'pchibasp_1411783695-Ta-Trung-Ho-village.jpg',
+										'sbhacipp_1411783695-Black-Hmong-minority.jpg',
+										'hcpsiabp_1411783802-sapa-children.jpg',
+										'paphicsb_1411784241-red-dao-people.jpg',
+										'ipshpcba_1411784450-Muong-Hoa-valley-3.jpg',
+										'isphcapb_1411784588-Thanh-Phu-Village.jpg',
+										'shicapbp_1411784765-sapa-vietnam-15.jpg',
+										'cppsihab_1411784765-Ban-Lech-Village.jpg']
+									?>
+									@for($i = 0; $i < 9; $i++)
+									<div class="col-sm-4">
+										<a href="http://www.palmvietnamtravel.com/data/upload/{{ $img_array[$i] }}" title="Red Dao people" class="group1 cboxElement">
+											<img src="http://www.palmvietnamtravel.com/data/upload/{{ $img_array[$i] }}" alt="Red Dao people" title="Red Dao people" class="img-responsive">
+										</a>
+										<h4>Red Dao people</h4>
+									</div>
+									@endfor
+								</div>
+
+								<h3>FULL ITINERARY:</h3>
+								<em>On this trip you have an opportunity to explore one of the most beautiful parts in Sapa area, which is under protection of Hoang Lien National Park. The night you spend in campsite nearby a river will be memorial moments along the trek. You will also be able to meet several different minorities, which cannot be found in other areas of Sapa, such as Tay and Xa Pho. Even though they live close to each other, the Tay is one of the most advanced minority meanwhile the Xa Pho still maintains the tradition of being nomadic.</em>
+								<h4>Day 1: Sapa - Tavan - Seomity (Breakfast, Lunch, Dinner)</h4>
+								<p>Met up at your hotel in Sapa by local guide and driver then transferred to Muong Hoa valley. Your trek will begin from Tavan village of Giay minority. The first day trek will be mostly uphill. Whenever you stop for a rest, you will be able to enjoy valley view. Before noon, you stop again at a nice spot for lunch.</p>
+								<p>The trek will be softer in the afternoon. But the scenery becomes even more beautiful. You pass by Seomity village of Black Hmong minority before you arrive at the campsite, which locates nearby a river outside the village. While porters put up tents and cook dinner, you can take a walk to stretch the legs.</p>
+								<p><em>Approx: 0,5 hour driving/ grade 3 of 5/ 4,5 hours walking/ 1 hour lunch.</em></p>
+								<h4>Day 2: Seomity - Den Thang - Ta Trung Ho (Breakfast, Lunch, Dinner)</h4>
+								<p>The trek today takes you through beautiful rice paddies and over old suspension bridges. You will trek on small trail sneaking through rainforest. You arrive in Den Thang village of Black Hmong by noon. Here you stop for lunch either nearby a river or in a local school according to the weather.</p>
+								<p>After lunch, the trek will becomes tough on tinny footpath going up and down, which requires a lot of concentration. You will reach to Ta Trung Ho village of Red Dao minority where you spend the night in local house. Both the valley and the village have just received foreign visitors. The night will be even more interesting when you are in the wonderful hospitable atmosphere of the Red Dao.</p>
+								<p><em>Approx: 7 hours walking/ 1-hour lunch</em></p>
+								<h4>Day 3: Ta Trung Ho - Nam Toong - Thanh Phu (Breakfast, Lunch, Dinner)</h4>
+								<p>The trek today takes you through beautiful rice paddies and over old suspension bridges. You will trek on small trail sneaking through rainforest. You arrive in Den Thang village of Black Hmong by noon. Here you stop for lunch either nearby a river or in a local school according to the weather.</p>
+								<p>After lunch, the trek will becomes tough on tinny footpath going up and down, which requires a lot of concentration. You will reach to Ta Trung Ho village of Red Dao minority where you spend the night in local house. Both the valley and the village have just received foreign visitors. The night will be even more interesting when you are in the wonderful hospitable atmosphere of the Red Dao.</p>
+								<p><em>Approx: 7 hours walking/ 1-hour lunch</em></p>
+								<h4>Day 4: Thanh Phu - Ban Lech - Sapa (Breakfast, Lunch)</h4>
+								<p>The trek today takes you through beautiful rice paddies and over old suspension bridges. You will trek on small trail sneaking through rainforest. You arrive in Den Thang village of Black Hmong by noon. Here you stop for lunch either nearby a river or in a local school according to the weather.</p>
+								<p>After lunch, the trek will becomes tough on tinny footpath going up and down, which requires a lot of concentration. You will reach to Ta Trung Ho village of Red Dao minority where you spend the night in local house. Both the valley and the village have just received foreign visitors. The night will be even more interesting when you are in the wonderful hospitable atmosphere of the Red Dao.</p>
+								<p><em>Approx: 7 hours walking/ 1-hour lunch</em></p>
+								<h3>PRICE DETAIL:</h3>
+								<p class="hotel-note note1">Valid from now until the end of March 2016.<br> Price in US dollar per person for the private party of.</p>
+								<table class="table_tb">
+									<thead>
+										<tr class="none-bg">
+											<th>Tour Category</th>
+											<th>2 pax</th>
+											<th>3 - 6 pax</th>
+											<th>7 - 10 pax</th>
+											<th>11 - 15 pax</th>
+											<th>Single sup</th>
+										</tr>
+									</thead>
+									<tbody>
+									<tr>
+										<td><strong>HOMESTAY</strong></td>
+										<td><strong>400</strong></td>
+										<td><strong>295</strong></td>
+										<td><strong>198</strong></td>
+										<td><strong>169</strong></td>
+										<td><strong>0</strong></td>
+									</tr>
+									</tbody>
+								</table>
+								<div class="pakage">
+									<strong>Package Includes:</strong>
+									<ul>
+									<li>Meals as mentioned in the itinerary.</li>
+									<li>Train ticket Hanoi - Lao Cai - Hanoi.</li>
+									<li>Black Hmong porters (to carry food and luggage).</li>
+									<li>Cook (from group sizes of 6 pax).</li>
+									<li>All needed transport.</li>
+									<li>Water on the whole trip.</li>
+									<li>Sleeping bag and mattresses.</li>
+									<li>Waterproof bluebag for luggage.</li>
+									<li>Tents if needed.</li>
+									<li>Mosquito net.</li>
+									<li>All entrance fees and permit.</li>
+									<li>Overnight in local house or tent.</li>
+									</ul>
+
+									<strong>Package excludes:</strong>
+									<ul>
+									<li>Optional tour; Insurance.</li>
+									<li>International flights; Granitites to service staffs.</li>
+									<li>Expenditure of a personal nature, such as drinks, souvenirs, telephone calls, laundry, etc.</li>
+									<li>Tipping for Tour Guide and driver (4 usd/pax/day).</li>
+									</ul>
+
+									<strong>Tour Policy:</strong>
+									<ul>
+									<li>Infant below 2 years old sharing same room with parents is free of charge.</li>
+									<li>Child below 10 yrs old (with extra bed) and sharing the room with parents is charged for 75%.</li>
+									<li>Child below 10 yrs old (No extra bed) and sharing the room with parents is charged for 65%.</li>
+									<li>The price of tour just for NORMAL day, please confirm in case of Holiday.</li>
+									</ul>
+								</div>
+
+							</div>
+
+							<div role="tabpanel" class="tab-pane tour-content" id="map">
+								<img src="http://www.palmvietnamtravel.com/data/upload/1439014372-Vietnam_map.jpg" alt="Vietnam tours" title="Vietnam tours" class="vietnam-map img-responsive"style="width: 100%">
+							</div>
+						</div>
+
+					</div>
+				</div><!-- .tour-detail -->
+
+				<div class="social">
+					@include('module.social')
+				</div><!-- .social -->
+
+				<div class="related-tours">
+					<h2 class="page-title">RELATED TOURS</h2>
+					<div class="row">
+						<?php
+							$img_array = ['1427341738-sapa-vietnam.jpg',
+							'1427341865-lao-cai.jpg',
+							'1429165083-tours-in-sapa-3days.jpg',
+							'1411634406-Halong-Bay-2.jpg',
+							'1411634318-Halong-Bay-1.jpg',
+							'1427342764-halong-bay.jpg',
+							'1411633122-thu-bon-river-hoian.jpg',
+							'1411629184-Nha-Trang-Resort.jpg',
+							'1427342511-mekong-floating-market.jpg',
+							'1427342341-tamcoc.jpg']
+						?>
+						@for($i = 0; $i < 6; $i++)
+						<div class="col-sm-4">
+							<div class="list-item">
+								<a href="./sapa-discovery-tours" title="Sapa - a Walk of Colors">
+									<img src="http://www.palmvietnamtravel.com/data/upload/{{ $img_array[$i] }}" alt="Sapa - a Walk of Colors" class="img-responsive">
+								</a>
+								<h3>
+									<a href="./sapa-discovery-tours" title="Sapa - a Walk of Colors">Sapa - a Walk of Colors</a>
+								</h3>
+								<p><strong>Duration:</strong> 2 Days/ 1 Night</p>
+								<span class="price">From: $186</span>
+							</div><!-- .related-tour-item -->
+						</div>
+						@endfor
+					</div>
+				</div><!-- related-tours -->
+			</div>
+
+			<div class="col-md-3 col-sm-4 hidden-xs">
+				@include('module.widget.support')
+
+				@include('module.widget.tour_booking_guide')
+
+				@include('module.widget.why_us')
+			</div>
+		</div>
+	</div>
+</div><!-- #vietnam-tour-detail -->
+{!! HTML::script('jquery.magnific-popup.js') !!}
+<script>
+	$('.photos').magnificPopup({
+		delegate: 'a', // child items selector, by clicking on it popup will open
+		type: 'image',
+		gallery: {
+	enabled: true
+		},
+	});
+</script>
+@stop

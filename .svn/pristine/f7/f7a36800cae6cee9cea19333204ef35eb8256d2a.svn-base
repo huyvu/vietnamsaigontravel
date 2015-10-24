@@ -1,0 +1,25 @@
+.form-horizontal .control-label {
+	font-weight: bold;
+	color: #000;
+}
+.custom-label {
+	padding-top: 7px;
+}
+.link-insert-img, .remove-img {
+	color: #0073aa;
+	text-decoration: underline;
+	cursor: pointer;
+}
+.link-insert-img:hover, .remove-img:hover {
+	color: #30B4F2;
+	text-decoration: underline;
+	cursor: pointer;
+}
+.remove-img {
+	margin-top: 14px;
+	display: block;
+}
+
+a.btn-tool {
+	color: #ffffff !important;
+}

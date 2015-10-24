@@ -1,0 +1,239 @@
+
+
+<?php $__env->startSection('page-content'); ?>
+<div id="vietnam-tour-detail">
+	<div class="slidehome">
+		<div class="tips">
+			<div class="container wphomes">
+		      	<div class="searchbox-black toogle-search">
+		         	<p class="search-head">Find Your Trip</p>
+		         	<form method="get" action="<?php echo e(URL::to('search')); ?>" id="frmSearch" class="form-horizontal" name="frmSearch">
+			            <ul>
+			               	<?php /* <li>
+			                  	<label for="slCountry">Country</label>
+			                  	<select onchange="selectChange()" id="slCountry" name="slCountry" class="form-control">
+			                     	<option value="-1">-- [Select] --</option>
+			                     	<option value="1">Vietnam tours</option>
+			                     	<option value="2">Laos tours</option>
+			                     	<option value="3">Cambodia tours</option>
+			                     	<option value="4">Myanmar tours</option>
+			                  	</select>
+			               	</li> */ ?>
+			               	<li>
+			                  	<label>Destinations</label>
+			                  	<select id="slDestination" name="slDestination" class="form-control">
+			                     	<option value="1">-- [Vietnam Destinations] --</option>
+			                     	<option value="Cai Be">Cai Be</option>
+			                     	<option value="Can Tho">Can Tho</option>
+			                     	<option value="Chau Doc">Chau Doc</option>
+			                     	<option value="Cu Chi">Cu Chi Tunnels</option>
+			                     	<option value="DaLat">Da Lat</option>
+			                     	<option value="Da Nang">Da Nang</option>
+			                     	<option value="Floating Market">Floating Market</option>
+			                     	<option value="Halong Bay">Halong Bay</option>
+			                     	<option value="hanoi">Hanoi Capital</option>
+			                     	<option value="Ho Chi Minh City">Ho Chi Minh City</option>
+			                     	<option value="hoi an">Hoian Ancient Town</option>
+			                     	<option value="Hue">Hue Citadel</option>
+			                     	<option value="Lao Cai">Lao Cai</option>
+			                     	<option value="Mekong Delta">Mekong Delta</option>
+			                     	<option value="Mui Ne">Mui Ne - Phan Thiet</option>
+			                     	<option value="My Tho">My Tho</option>
+			                     	<option value="Nha Trang">Nha Trang</option>
+			                     	<option value="Phu Quoc">Phu Quoc Island</option>
+			                     	<option value="sapa">Sapa</option>
+			                     	<option value="Vinh Long">Vinh Long</option>
+			                     	<option value="Vung Tau">Vung Tau</option>
+			                  	</select>
+							</li>
+							<li>
+								<label for="slDuration">Trip Duration</label>
+								<select id="slDuration" name="slDuration" class="form-control">
+									<option value="-1">-- [All] --</option>
+									<option value="1 - 2">1 - 2 days</option>
+									<option value="2 - 5">2 - 5 days</option>
+									<option value="6 - 12">6 - 12 days</option>
+									<option value="13 -&gt;">13 -&gt; days</option>
+								</select>
+							</li>
+							<li>
+								<label for="slPrice">Price</label>
+								<select id="slPrice" name="slPrice" class="form-control">
+									<option>-- [All] --</option>
+									<option value="100 - 300">100 - 300 USD</option>
+									<option value="200 - 500">200 - 500 USD</option>
+									<option value="500 - 1000">500 - 1000 USD</option>
+									<option value="1000 -&gt;">&gt; 1000 USD</option>
+									</select>
+							</li>
+			               	<li class="lsearchlast">
+			               		<input type="submit" onclick="return validate();" class="btn btn-default" value="Search" id="Submit" name="Submit">
+			               	</li>
+			            </ul>
+			        </form>
+			    </div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<h1 class="page-title">NORTH VIETNAM TOURS</h1>
+		<div class="breadcrumbs clearfix">
+			<div class="breadcrumb" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+				<a href="#" class="active" itemprop="url"><span itemprop="title">Home</span></a>
+				<span>› </span>
+				<a title="Visa Fees" href="https://www.vietnam-evisa.org/visa-fee.html" class="active">
+				<span itemprop="title">Vietnam tours</span>
+				</a>
+				<span>› </span>
+				<a title="Visa Fees" href="https://www.vietnam-evisa.org/visa-fee.html" class="active">
+				<span itemprop="title">Northern</span>
+				</a>
+				<span>› </span>
+				<a title="Visa Fees" href="https://www.vietnam-evisa.org/visa-fee.html" class="active">
+				<span itemprop="title">Explore the Wonders of Sapa 4 Days/ 3 Nights</span>
+				</a>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-9 col-sm-8">
+
+			</div>
+
+			<div class="col-md-3 col-sm-4 hidden-xs">
+				<div class="widget support">
+					<h3 class="widget-title">SUPPORT 24/7</h3>
+					<div class="yahoo-support">
+						<a href="ymsgr:sendIM?tranhongdiep1980" title="Yahoo chat with Diep" class="yahooin yahooin1">
+							<img src="http://opi.yahoo.com/online?u=tranhongdiep1980&amp;m=g&amp;t=2" alt="Palm Vietnam Travel Support 1">
+							<span>Ms.Diep</span>
+						</a>
+						<p class="mobile">Mobile: +84 902 626 729</p>
+						<a href="ymsgr:sendIM?palmvietnam01" title="Yahoo chat with Alex" class="yahooin yahooin2">
+							<img src="http://opi.yahoo.com/online?u=palmvietnam01&amp;m=g&amp;t=2" alt="Palm Vietnam Travel Support 2">
+							<span>Ms.Alex</span>
+						</a>
+						<p class="mobile">Mobile: +84 945 626 729</p>
+
+					</div>
+					<div class="skype-support">
+						<ul class="list-inline">
+							<li><a href="skype:palmvietnam?call" title="Skype Call us" class="callin"><i class="fa fa-skype"></i> Call</a></li>
+							<li><a href="skype:palmvietnam?chat" title="My name Hong Diep, Skype chat with me!" class="chatin"><i class="fa fa-skype"></i> Chat</a></li>
+							<li><a href="skype:palmvietnam01?chat" title="My name Alex, Skype chat with me!" class="chatin"><i class="fa fa-skype"></i> Chat</a></li>
+						</ul>
+					</div>
+					<div class="phone-support">
+						<a href="tel:+84902626729" title="Call us with Viber" class="viberin">+84 902 626 729</a>
+						<a href="tel:+84902626729" title="Call us with Whatsapp" class="whatsappin">+84 902 626 729</a>
+					</div>
+				</div><!-- .support -->
+			</div>
+		</div>
+	</div>
+</div><!-- #vietnam-tour-detail -->
+
+<style>
+	#vietnam-tour-detail .slidehome {
+		background: url('http://www.palmvietnamtravel.com/data/upload/1439019166-vietnam-tours.jpg') no-repeat;
+		min-height: 200px;
+		position: relative;
+	}
+
+	#vietnam-tour-detail .tips {
+		position: absolute;
+		bottom: 0;
+	}
+
+	.widget {
+	    background-color: #ffffff;
+	    border: 1px solid #ddd;
+	    padding: 5px;
+	}
+
+	.widget .widget-title {
+		line-height: 40px;
+	    padding: 0 10px;
+	    margin-top: 0;
+	    color: #0283DE;
+	    background: #eee;
+	    border: 1px solid #ddd;
+	    font-size: 18px;
+	    font-weight: normal;
+	    text-transform: uppercase;
+	}
+
+	.support .yahoo-support, .support .skype-support {
+		padding-left: 10px;
+		margin-bottom: 10px;
+	}
+
+	.support .yahoo-support > a {
+	    display: block;
+	    padding: 12px 80px 12px 0px;
+	}
+
+	.support .yahoo-support > a:hover {
+		text-decoration: none;
+	}
+
+	.support .yahoo-support a:first-child {
+	    background: url(http://www.palmvietnamtravel.com/template/Default/images/msdiep.png) no-repeat right center;
+	}
+
+	.support .yahoo-support a:nth-child(3) {
+	    background: url(http://www.palmvietnamtravel.com/template/Default/images/msduong.png) no-repeat right center;
+	}
+
+	.support .yahoo-support > a img {
+		display: block;
+	}
+
+	.support .yahoo-support > a span {
+	    color: #42a324;
+	    font-weight: bold;
+	    font-size: 16px;
+	    padding: 5px 0 0;
+	    display: block;
+	}
+
+	.support .yahoo-support > p {
+	    font-weight: bold;
+	}
+
+	.support .skype-support a {
+	    font-size: 20px;
+	    color: #00AFF0;
+	}
+
+	.support .skype-support a:hover {
+		text-decoration: none;
+		color: #F04100;
+	}
+
+	.support .phone-support a {
+		line-height: 32px;
+	    padding: 0 0 0 37px;
+	    margin: 10px 0 0 6px;
+	    font-size: 20px;
+	    display: block;
+	}
+
+	.support .phone-support a:hover {
+		text-decoration: none;
+	}
+
+	.support .phone-support a.viberin {
+
+	    background: url(http://www.palmvietnamtravel.com/template/Default/images/viber.png) no-repeat left center;
+	    color: #6d3c82;
+	}
+
+	.support .phone-support a.whatsappin {
+	    background: url(http://www.palmvietnamtravel.com/template/Default/images/whatsapp.png) no-repeat left center;
+	    color: #349503;
+	}
+</style>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout.main', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

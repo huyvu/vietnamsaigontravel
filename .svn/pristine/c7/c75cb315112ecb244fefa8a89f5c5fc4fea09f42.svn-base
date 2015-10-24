@@ -1,0 +1,8 @@
+.form-horizontal .control-label {
+	font-weight: bold;
+	color: #000;
+}
+
+a.btn {
+	color: #ffffff !important;
+}

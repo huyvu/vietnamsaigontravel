@@ -1,0 +1,19 @@
+<?php /* Start head */ ?>
+<?php $__env->startSection('title'); ?> 
+    <?php echo e($title); ?>
+
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('description'); ?>
+    <?php echo e($description); ?>
+
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('keywords'); ?>
+    <?php echo e($keywords); ?>
+
+<?php $__env->stopSection(); ?>
+<?php /* End head */ ?>
+
+<?php $__env->startSection('page-content'); ?>
+    
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout.main', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

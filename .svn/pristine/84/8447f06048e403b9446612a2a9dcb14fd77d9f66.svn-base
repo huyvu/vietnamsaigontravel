@@ -1,0 +1,53 @@
+<?php 
+	/**
+		* Create the HTML for a select nation tag.
+		*
+		* @param string $name
+		* @param array 	$attributes
+		* @param string $first
+		* @param string $selected
+	*/
+	function nation_list( $name, $attributes = [], $first = null, $selected = null ) {
+		$option = "";
+		$contents = file_get_contents(realpath(public_path('json/countries.json')));
+	    $countries = json_decode(stripslashes($contents), true);
+	    $countries = array_values(array_sort($countries, function($value) {
+		    return $value['name'];
+		}));
+		
+		// check $first not empty set position first list
+	    (!empty($first)) ? $option .= '<option value="">'. $first .'</option>' : '';
+
+	    // run for option in select tag
+	    foreach($countries as $item):
+	    	($item['name'] == $selected) ? $select = "selected = 'selected'" : $select = "";
+	    	$option .= "<option value='". $item['name'] ."' ". $select .">". $item['name'] ."</option>";
+	    endforeach;
+
+		return '<select name="'. $name .'"' .HTML::attributes($attributes) .'>'. $option .'</select>';
+	}
+
+	/**
+		* Create the HTML for a select number tag.
+		*
+		* @param string 	$name
+		* @param array 		$attributes
+		* @param string 	$first
+		* @param int 		$maxlength
+		* @param boolean 	$plus
+		* @param string 	$addstring
+		* @param string $selected
+	*/
+	function number_list( $name, $attributes = [], $first = null, $maxlength = 20, $plus = false, $addstring = null, $selected = null) {
+		$option = "";
+		(!empty($first)) ? $option .= '<option value="">'. $first .' </option>' : '';
+
+		for ($i=1; $i <= $maxlength; $i++) { 
+			($i == $selected) ? $select = "selected = 'selected'" : $select = "";
+			($i == $maxlength && $plus) ? $aadPlus = "+" : $addPlus = "";
+			$option .= "<option value='". $i ."' ". $select .">". $i ." ". $addstring ." ". $addPlus ."</option>";
+		}
+		return '<select name="'. $name .'"'. HTML::attributes($attributes) .'>'. $option .'</select>';
+	}
+
+?>

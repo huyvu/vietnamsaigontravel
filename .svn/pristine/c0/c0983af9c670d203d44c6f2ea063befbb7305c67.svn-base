@@ -1,0 +1,7 @@
+<?php 
+	return [
+		'FACEBOOK_API' 	=> '811193358957668',
+		'MAIL_INFO' 	=> 'info@plamvietnam.com',
+		'TELL'			=> '+84 902626729',
+	];
+?>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+</head>
+<body>
+	<header>
+		
+	</header>
+	<div class="wapper">
+		<div class="container">
+			<?php echo e($content); ?>
+
+		</div>
+	</div>
+	<footer>
+		
+	</footer>
+</body>
+</html>
+<?php echo $__env->make('module/head', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

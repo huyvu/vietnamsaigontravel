@@ -1,0 +1,52 @@
+@extends('layout.admin')
+
+@section('page-content')
+<div class="page-title">
+	<div class="title-env">
+		<h1 class="title">Vietnam Destinations</h1>
+		<p class="description">Variations of basic tables included in Xenon</p>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-12">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>Name</th>
+							<th>Address</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>Arlind</td>
+							<td>Nushi</td>
+						</tr>
+
+						<tr>
+							<td>2</td>
+							<td>Art</td>
+							<td>Ramadani</td>
+						</tr>
+
+						<tr>
+							<td>3</td>
+							<td>Filan</td>
+							<td>Fisteku</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+@stop
+
+@section('script')
+
+@stop

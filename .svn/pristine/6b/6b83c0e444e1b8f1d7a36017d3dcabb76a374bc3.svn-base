@@ -1,0 +1,112 @@
+@extends('layout.admin')
+
+@section('page-content')
+<div class="page-title">
+	<div class="title-env">
+		<h1 class="title">Vietnam Destinations</h1>
+		<p class="description">Variations of basic tables included in Xenon</p>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-12">
+		<div class="panel panel-default">
+			<div class="panel-body">
+
+					<script type="text/javascript">
+					jQuery(document).ready(function($)
+					{
+						$("#tbl-destinations").dataTable({
+							dom: "t" + "<'row'<'col-xs-6'i><'col-xs-6'p>>",
+							aoColumns: [
+								{bSortable: false},
+								null,
+								null,
+								null,
+								null
+							],
+						});
+
+						// Replace checkboxes when they appear
+						var $state = $("#tbl-destinations thead input[type='checkbox']");
+
+						$("#tbl-destinations").on('draw.dt', function()
+						{
+							cbr_replace();
+
+							$state.trigger('change');
+						});
+
+						// Script to select all checkboxes
+						$state.on('change', function(ev)
+						{
+							var $chcks = $("#tbl-destinations tbody input[type='checkbox']");
+
+							if($state.is(':checked'))
+							{
+								$chcks.prop('checked', true).trigger('change');
+							}
+							else
+							{
+								$chcks.prop('checked', false).trigger('change');
+							}
+						});
+					});
+					</script>
+
+					<table class="table table-striped" id="tbl-destinations">
+						<thead>
+							<tr>
+								<th class="no-sorting">
+									<input type="checkbox" class="cbr">
+								</th>
+								<th>#</th>
+								<th>Name</th>
+								<th>Region</th>
+								<th class="text-center">Published</th>
+								<th>Created date</th>
+							</tr>
+						</thead>
+
+						<tbody class="middle-align">
+							<?php $i = 1 ?>
+							@foreach($destinations as $destination)
+								<tr>
+									<td>
+										<input type="checkbox" class="cbr">
+									</td>
+									<td>{{ $i }}</td>
+									<td>{{ $destination->name }}</td>
+									<td>{{ $destination->region }}</td>
+									<td align="center">
+										@if($destination->active)
+											<button class="btn btn-icon btn-red btn-xs">
+												<i class="fa-remove"></i>
+											</button>
+										@else
+											<button class="btn btn-icon btn-success btn-xs">
+												<i class="fa-check"></i>
+											</button>
+										@endif
+									</td>
+									<td>{{ date('M/d/Y', strtotime($destination->created_at)) }}</td>
+								</tr>
+							<?php $i++ ?>
+							@endforeach
+						</tbody>
+					</table>
+
+				</div>
+		</div>
+	</div>
+</div>
+@stop
+
+@section('script')
+
+<link rel="stylesheet" href="{{ asset('public/template/js/datatables/dataTables.bootstrap.css') }}">
+{!! HTML::script('datatables/js/jquery.dataTables.min.js') !!}
+{!! HTML::script('datatables/dataTables.bootstrap.js') !!}
+{!! HTML::script('datatables/yadcf/jquery.dataTables.yadcf.js') !!}
+{!! HTML::script('datatables/tabletools/dataTables.tableTools.min.js') !!}
+@stop

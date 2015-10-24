@@ -1,0 +1,11 @@
+<?php
+	return [
+		'FACEBOOK_API' 	=> '811193358957668',
+		'MAIL_INFO' 	=> 'info@saigonvietnam.com',
+		'TELL'			=> '+84 902626729',
+		'FAX'			=> '+84 8 3840 4729',
+		'ADDRESS'		=> '102 Suite DMC Building, 223 Dien Bien Phu Str, W.15, Binh Thanh Dist, HCMC, Vietnam',
+		'HOTLINE'		=> '+84 902 626 729',
+		'SITE_NAME'		=> 'Vietnam Travel Co., Ltd.'
+	];
+?>
