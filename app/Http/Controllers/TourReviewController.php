@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Input;
+use Request;
 use App\TourReview;
-use Illuminate\Http\Request;
+// use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -38,7 +40,12 @@ class TourReviewController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = Input::all();
+        if(Request::ajax())
+        {
+            TourReView::create($data);
+            return 'Thank you ! Your review has been sent.';
+        }
     }
 
     /**

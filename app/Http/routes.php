@@ -21,6 +21,7 @@ Route::group(['prefix' => 'vietnam'], function()
 {
 	Route::get('/', 'VietnamController@index');
 	Route::get('detail/{alias}', 'VietnamController@detail');
+	Route::get('destination/{destination}', 'VietnamController@destination');
 });
 
 Route::group(['prefix' => 'day-tour'], function()

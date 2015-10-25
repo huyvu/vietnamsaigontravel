@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Tour;
+use App\TourDestination;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -42,6 +43,37 @@ class VietnamController extends Controller
         return view('vietnam.daytour.index', compact('tours'));
     }
 
+
+    /**
+     * Show the tours page filter by destination.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function destination($destination)
+    {
+        $region = ['northern', 'southern', 'central'];
+
+        if (in_array($destination, $region)) {
+            $destinations = TourDestination::where('region', '=' , ucfirst($destination).' Vietnam')->get();
+            $des_array = [];
+
+            foreach ($destinations as $des) {
+                array_push($des_array, $des->id);
+            }
+
+            $tours = Tour::whereIn('going_to', $des_array)
+                           ->orWhereIn('depart_from', $des_array)->get();
+            return view('vietnam.destination', ['tours' => $tours, 'destination' => ucfirst($destination).' Vietnam']);
+        } else {
+            $destination = TourDestination::where('alias', '=', $destination)->first();
+
+            if ($destination) {
+                $tours = Tour::where('going_to', $destination->id)->orWhere('depart_from', $destination->id)->get();
+                return view('vietnam.destination', ['tours' => $tours, 'destination' => $destination->name]);
+            }    
+        }
+            
+    }
 
 
     /**

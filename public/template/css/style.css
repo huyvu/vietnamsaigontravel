@@ -1719,7 +1719,7 @@ label.error {
     background: #fff;
 }
 
-.testimonial-script span {
+#toggle-review-form {
     float: right;
     display: block;
     padding: 10px 14px;
@@ -1732,6 +1732,13 @@ label.error {
 
 .write-form {
     padding: 10px 0 10px;
+    margin: 10px 0 0;
+    display: none;
+}
+
+.ajax-message {
+    float: left;
+    clear: both;
     margin: 10px 0 0;
     display: none;
 }
@@ -1803,3 +1810,77 @@ label.error {
 .inner-tour .tour-list .list-item .item-detail h3 {
 	min-height: 36px;
 }
+
+/* Filter tour by destination */
+.getlist {
+    clear: both;
+    background: #fff;
+    padding: 0;
+    margin: 0 0 10px;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    border-bottom: 2px solid #ddd
+}
+.getlist h3 {
+    clear: both;
+    display: block;
+    color: #0283DE;
+    text-transform: uppercase;
+    background: url(../images/open.png) no-repeat 98% center;
+    font-size: 14px;
+    line-height: 36px;
+    padding: 0 10px;
+    border-top: 1px solid #e5e5e5;
+    cursor: cell;
+    font-weight: bold;
+    margin: 0;
+}
+.getlist h3.h5active {
+    background: url(../images/close1.png) no-repeat 98% center;
+    border-bottom: 1px solid #e5e5e5;
+    color: #ea640b
+}
+.getlist h3:hover {
+    background: #fbf9f9 url(../images/open.png) no-repeat 98% center
+}
+.getlist ul {
+    padding: 1% 2%;
+    background: #f6f6f6;
+    overflow: hidden;
+    display: block;
+    list-style: none;
+}
+.getlist li {
+    width: 20%;
+    float: left;
+    padding: 5px 0
+}
+.getlist li a {
+    color: #555;
+    font-size: 12px
+}
+.getlist li a:hover {
+    color: #ea640b
+}
+
+.ms {
+    display: block;
+    padding: 10px 1%;
+    line-height: 20px;
+    border-radius: 4px;
+    margin: 0px 0 10px 0;
+    border: 1px solid #95bb26;
+    background: #f7ffe1;
+    color: #360;
+    text-align: center;
+    clear: both;
+    font-size: 16px
+}
+.ms2 {
+    width: 100%;
+    display: block;
+    font-size: 14px;
+    line-height: 20px;
+}
+/* End Filter tour by destination */

@@ -19,7 +19,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<section class="about">
-				    <div class="testimonial-script"><span>Suggestions/Comments</span>
+				    <div class="testimonial-script"><span id="toggle-review-form">Suggestions/Comments</span>
 				        <p><strong>For any suggestions or comments, please email us at:&nbsp;<a title="Email contact" href="mailto:{{ Config::get('myconfig.MAIL_INFO') }}">{{ Config::get('myconfig.MAIL_INFO') }}</a></strong>
 				        </p>
 				        <div class="write-form">
@@ -59,12 +59,13 @@
 		                    <!--<p><label for="attachment">File Attach</label><input name="attachment" type="file"></p>-->
 		                    <div class="form-group">
 			                    <div class="col-sm-offset-2 col-sm-2">
-			                        <input class="btn btn-main btn-orange" type="submit" name="SubmitTesti" id="SubmitTesti" value="Submit">
+			                        <input class="btn btn-main btn-orange btn-review" type="submit" name="SubmitTesti" id="SubmitTesti" value="Submit">
 			                    </div>
 		                    </div>
-				                <div class="ajax-message"><i class="waiting">&nbsp;</i>
-				                    <p class="waiting-text">Sending...</p>
-				                </div>
+			                <div class="ajax-message">
+			                	<span class="fa fa-spin fa-spinner"></span>
+			                    <span class="waiting-text">Sending...</span>
+			                </div>
 				            {!! Form::close() !!}
 				        </div>
 				    </div>
@@ -93,59 +94,43 @@
 
 {!! HTML::script('jquery.validate.min.js') !!}
 <script>
-	$( "#frmTourRequest" ).validate({
+	$("#toggle-review-form").click(function(event) {
+		$('.write-form').toggle('fast');
+	});
+
+	$( "#frmReview" ).validate({
 	  rules: {
 	  	nationality : "required",
-	  	first_name : "required",
-	  	last_name : "required",
+	  	full_name : "required",
 	    email: {
 	    	required: true,
 		    email: true
 	    },
-	    email_confirm: {
-	    	required: true,
-		    email: true,
-	    	equalTo: "#email"
-	    },
-	    phone : {
-	    	required: true,
-	    	digits: true
-	    },
 
-	    arrival_port : "required",
-	    arrival_date : "required",
-	    departure_date : "required",
-	    duration : "required",
-	    adults : "required"
+	    content : "required"
+	  },
+	  submitHandler: function() {
+	  	$.ajax({
+	  		url: "{{ route('tour-reviews.store') }}",
+	  		type: 'POST',
+	  		data: $( "#frmReview" ).serialize(),
+	  		beforeSend: function() {
+				$('.ajax-message').show();
+				$('.fa-spinner').show();
+	  			$('.waiting-text').text('Sending ...');
+			},
+	        success : function(data){
+	        	console.log('hello');
+		        $('.waiting-text').text(data);
+		  		$('.fa-spinner').hide();
+		  		setTimeout(function(){
+		  		   $('#frmReview').find("input[type=text], textarea").val("");
+				   $('.ajax-message').hide();
+				   $('.write-form').hide('slow');// or fade, css display however you'd like.
+				}, 2000);
+	        }
+	  	}, "json");
 	  }
 	});
 </script>
-@stop
-
-
-@section('footer-script')
-	@include('module.datepicker.date')
-	<script>
-	    var nowTemp = new Date();
-    	var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
-
-    	var checkin = $('#arrival_date').datepicker({
-    		format: 'dd/mm/yyyy',
-      		onRender: function(date) {
-        		return date.valueOf() < now.valueOf() ? 'disabled' : '';
-      		}
-    	}).on('changeDate', function(ev) {
-			checkin.hide();
-      		$('#departure_date')[0].focus();
-    	}).data('datepicker');
-
-		var checkout = $('#departure_date').datepicker({
-			format: 'dd/mm/yyyy',
-  			onRender: function(date) {
-    		return date.valueOf() <= checkin.date.valueOf() ? 'disabled' : '';
-  		}
-    	}).on('changeDate', function(ev) {
-     		checkout.hide();
-    	}).data('datepicker');
-	</script>
 @stop
