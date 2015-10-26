@@ -37,7 +37,7 @@
                         <tr>
                             <td><strong style="text-align:right;display:block">Full name:</strong>
                             </td>
-                            <td>{!! $first_name.' '.$last_name !!}</td>
+                            <td>{!! $first_name !!} {{ !empty($last_name) ? $last_name : '' }}</td>
                         </tr>
                         <tr>
                             <td><strong style="text-align:right;display:block">Email:</strong>

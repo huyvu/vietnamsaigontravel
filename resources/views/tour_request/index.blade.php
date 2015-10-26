@@ -132,25 +132,25 @@
 				         	<legend>Destination(s) to visit</legend>
 				         	<!-- List of destinations -->
 							<div class="form-group">
-									@for($i=0; $i < sizeof($destinations); $i++)
-										@if($i % 7 == 0)
-											@if($i!=0)
-											</div></div>
-											@endif
-											<div class="col-sm-3">
-												<div class="form-block">
+								@for($i=0; $i < sizeof($destinations); $i++)
+									@if($i % 7 == 0)
+										@if($i!=0)
+										</div></div>
 										@endif
-										<label>
-											<input type="checkbox" name="destinations[]" value="{{ $destinations[$i]->name }}" class="cbr cbr-done">
-											{{ $destinations[$i]->name }}
-										</label>
-										<br>
+										<div class="col-sm-3">
+											<div class="form-block">
+									@endif
+									<label>
+										<input type="checkbox" name="destinations[]" value="{{ $destinations[$i]->name }}" class="cbr cbr-done">
+										{{ $destinations[$i]->name }}
+									</label>
+									<br>
 
-										@if($i == sizeof($destinations))
-											</div></div>
-										@endif
-									@endfor
-								</div>
+									@if($i == sizeof($destinations))
+										</div></div>
+									@endif
+								@endfor
+							</div>
 				         </fieldset>
 
 				      	<fieldset>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\TourDestination;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -19,6 +20,7 @@ class HomeController extends Controller
         $data['title'] = "Vietnam Tours - Planning tours to Vietnam with the best offers";
         $data['description'] = "Book travel for less with specials on cheap airline tickets, hotels, car rentals, and flights on TraveloVietnam.com, your one-stop resource for travel and vacation needs";
         $data['keywords'] = "vietnam travel, travel to vietnam, vietnam tours, tours in vietnam, vietnam hotels, hotels in vietnam, vietnam visa, visa to vietnam";
+        $data['destinations'] = TourDestination::where('active', 1)->get();
         return view('welcome', $data);
     }
 
@@ -29,7 +31,7 @@ class HomeController extends Controller
      */
     public function create()
     {
-        
+
     }
 
     /**

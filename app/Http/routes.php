@@ -20,6 +20,7 @@ Route::get('/', 'HomeController@index');
 Route::group(['prefix' => 'vietnam'], function()
 {
 	Route::get('/', 'VietnamController@index');
+	Route::get('{duration}', 'VietnamController@duration')->where('duration', 'tours-in-vietnam-[0-9]+day(s\b|\b)');
 	Route::get('detail/{alias}', 'VietnamController@detail');
 	Route::get('destination/{destination}', 'VietnamController@destination');
 });
@@ -38,8 +39,15 @@ Route::resource('booking', 'BookingController');
 // Tour Review
 Route::resource('tour-reviews', 'TourReviewController');
 
+// Tour Request
 Route::get('customized-tours', 'TourRequestController@index');
 Route::post('customized-tours', 'TourRequestController@store');
+
+// Popular Tour
+Route::get('popular-tours', function(){
+	$tours = App\Tour::where('popular_tour', 1)->published()->get();
+	return view('vietnam.popular', ['tours' => $tours]);
+});
 
 // About Us page
 Route::get('about-us', function(){

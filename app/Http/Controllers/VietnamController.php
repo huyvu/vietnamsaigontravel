@@ -62,17 +62,32 @@ class VietnamController extends Controller
             }
 
             $tours = Tour::whereIn('going_to', $des_array)
-                           ->orWhereIn('depart_from', $des_array)->get();
+                           ->orWhereIn('depart_from', $des_array)->published()->get();
             return view('vietnam.destination', ['tours' => $tours, 'destination' => ucfirst($destination).' Vietnam']);
         } else {
             $destination = TourDestination::where('alias', '=', $destination)->first();
 
             if ($destination) {
-                $tours = Tour::where('going_to', $destination->id)->orWhere('depart_from', $destination->id)->get();
+                $tours = Tour::where('going_to', $destination->id)->orWhere('depart_from', $destination->id)->published()->get();
                 return view('vietnam.destination', ['tours' => $tours, 'destination' => $destination->name]);
-            }    
+            }
         }
-            
+
+    }
+
+    /**
+     * Show the tours page filter by duration.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function duration($duration)
+    {
+        // Get number from input string
+        $duration = preg_replace("/[^0-9]/","",$duration);
+
+        $tours = Tour::where('duration', '=', $duration)->published()->get();
+
+        return view('vietnam.duration', ['tours' => $tours, 'duration' => $duration]);
     }
 
 

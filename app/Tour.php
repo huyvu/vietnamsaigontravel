@@ -32,4 +32,14 @@ class Tour extends Model
     	'photos',
         'day_tour_start_time'
     ];
+
+    /**
+     * Scope a query to only include active tours.
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopePublished($query)
+    {
+        return $query->where('active', 1);
+    }
 }
