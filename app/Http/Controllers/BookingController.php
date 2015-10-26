@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Session;
 use Mail;
+use Config;
 use App\TourBooking;
 use App\Tour;
 use Illuminate\Http\Request;

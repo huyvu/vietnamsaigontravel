@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\TourBooking;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -15,7 +16,8 @@ class BookingController extends Controller
      */
     public function index()
     {
-        //
+        $bookings = TourBooking::all();
+        return view('admin.booking.index', ['bookings' => $bookings]);
     }
 
     /**
@@ -47,7 +49,10 @@ class BookingController extends Controller
      */
     public function show($id)
     {
-        //
+        $booking = TourBooking::findOrFail($id);
+        if ($booking) {
+            return view('admin.booking.show', ['booking' => $booking]);
+        }
     }
 
     /**
@@ -74,6 +79,18 @@ class BookingController extends Controller
     }
 
     /**
+     * Update selected destinations
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function updateBookings()
+    {
+        // var_dump(Input::get('cbid'));die();
+        TourBooking::destroy(Input::get('cbid'));
+        return redirect()->back();
+    }
+
+    /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
@@ -81,6 +98,7 @@ class BookingController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $destination = TourBooking::findOrFail($id);
+        $destination->delete();
     }
 }

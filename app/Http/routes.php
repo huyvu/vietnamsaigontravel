@@ -73,6 +73,10 @@ Route::group(['prefix' => 'administrator', 'namespace'=>'Admin', 'middleware' =>
     Route::resource('tour', 'TourController');
 	Route::resource('tour_review', 'TourReviewController');
 	Route::resource('tour_request', 'TourRequestController');
+
+	// Admin booking management
+	Route::post('post/set_active_status', 'BookingController@setActiveStatus');
+	Route::post('post/update_bookings', 'BookingController@updateBookings');
 	Route::resource('booking', 'BookingController');
 
 	// Admin Vietnam Destination
